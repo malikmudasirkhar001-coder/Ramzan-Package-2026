@@ -5,100 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramzan Relief Package 2026</title>
     <style>
-        :root {
-            --primary-green: #1b5e20;
-            --gold: #ffc107;
-            --light-bg: #f4f4f4;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            text-align: center;
-            color: #333;
-        }
-        header {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 25px 10px;
-            border-bottom: 5px solid var(--gold);
-        }
-        .container {
-            max-width: 500px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        /* HD Image Placeholder using a sturdy link */
-        .hd-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 3px solid var(--gold);
-        }
-        .content-padding {
-            padding: 25px;
-        }
-        h2 { color: var(--primary-green); margin-bottom: 10px; }
+        :root { --primary-green: #1b5e20; --gold: #ffc107; --light-bg: #f4f4f4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); text-align: center; color: #333; }
+        header { background-color: var(--primary-green); color: white; padding: 25px 10px; border-bottom: 5px solid var(--gold); }
+        .container { max-width: 500px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0px 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .hd-image { width: 100%; height: auto; display: block; border-bottom: 3px solid var(--gold); }
+        .content-padding { padding: 25px; }
         
-        .btn-withdraw {
-            display: inline-block;
-            background: linear-gradient(145deg, #e53935, #b71c1c);
-            color: white;
-            padding: 20px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.4rem;
-            margin-top: 10px;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(183, 28, 28, 0.4);
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .share-box {
-            display: none;
-            margin-top: 25px;
-            padding: 20px;
-            background: #fffde7;
-            border: 2px dashed #fbc02d;
-            border-radius: 12px;
-        }
-        .whatsapp-btn {
-            background-color: #25d366;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .ad-unit {
-            margin-top: 30px;
-            padding: 15px;
-            background: #f9f9f9;
-            font-size: 12px;
-            color: #888;
-            border: 1px solid #eee;
-            border-radius: 5px;
-        }
-        .footer-note {
-            font-size: 12px;
-            color: #999;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
+        .btn-withdraw { display: inline-block; background: linear-gradient(145deg, #e53935, #b71c1c); color: white; padding: 20px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.4rem; margin-top: 10px; cursor: pointer; border: none; width: 100%; box-shadow: 0 5px 15px rgba(183, 28, 28, 0.4); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        .share-box { display: none; margin-top: 25px; padding: 20px; background: #fffde7; border: 2px dashed #fbc02d; border-radius: 12px; }
+        .action-btn { color: white; padding: 15px; text-decoration: none; border-radius: 8px; display: block; margin-top: 15px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+        .whatsapp { background-color: #25d366; }
+        .youtube { background-color: #ff0000; display: none; }
+        
+        .progress-container { width: 100%; background-color: #ddd; border-radius: 10px; margin: 15px 0; height: 20px; overflow: hidden; }
+        .progress-bar { width: 0%; height: 100%; background-color: #25d366; transition: width 0.3s; }
+        
+        .success-msg { display: none; background: #e8f5e9; border: 2px solid #2e7d32; padding: 20px; border-radius: 10px; color: #1b5e20; font-weight: bold; margin-top: 20px; }
+        .ad-unit { margin-top: 30px; padding: 15px; background: #f9f9f9; font-size: 12px; color: #888; border: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -112,43 +38,73 @@
     <img src="https://img.freepik.com/free-photo/view-food-donations-basket_23-2149154744.jpg" alt="Ramzan Rashan" class="hd-image">
 
     <div class="content-padding">
-        <h2>مبارک ہو!</h2>
-        <p>آپ کا نام رمضان پیکیج کے لیے منتخب کر لیا گیا ہے۔ اپنی رقم ابھی ٹرانسفر کریں۔</p>
-
-        <button class="btn-withdraw" onclick="openShare()">رقم نکالیں (Withdraw)</button>
-
-        <div id="shareSection" class="share-box">
-            <h3 style="color: #d32f2f;">⚠️ سسٹم ویریفیکیشن!</h3>
-            <p>رقم بینک اکاؤنٹ میں بھیجنے کے لیے اس ویب سائٹ کو ابھی <b>5 گروپس</b> میں شیئر کریں تاکہ تصدیق مکمل ہو سکے۔</p>
-            
-            <a href="whatsapp://send?text=مریم نواز رمضان بونس 2026۔ مجھے 10,000 روپے مل گئے ہیں، آپ بھی ابھی اس لنک سے حاصل کریں: [Yahan_Apni_Website_Link_Likhein]" class="whatsapp-btn">
-                WhatsApp پر شیئر کریں
-            </a>
-            
-            <p style="font-size: 12px; margin-top: 10px; color: #666;">(شیئر کرنے کے بعد آپ کا ود ڈرا خود بخود کھل جائے گا)</p>
+        <div id="introSection">
+            <h2 style="color: var(--primary-green);">مبارک ہو!</h2>
+            <p>آپ کا نام رمضان پیکیج کے لیے منتخب کر لیا گیا ہے۔ اپنی رقم ابھی ٹرانسفر کریں۔</p>
+            <button class="btn-withdraw" onclick="showSteps()">رقم نکالیں (Withdraw)</button>
         </div>
 
-        <div class="ad-unit">
-            Google Advertisement Placement
-            <br>
-            <small>(Yahan apna Ad code paste karein)</small>
+        <div id="processSection" class="share-box">
+            <h3 id="stepTitle" style="color: #d32f2f;">مرحلہ 1: واٹس ایپ پر شیئر کریں</h3>
+            <p id="stepDesc">تصدیق کے لیے اس ویب سائٹ کو <b>5 گروپس</b> میں شیئر کریں۔</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="pBar"></div>
+            </div>
+
+            <a id="waBtn" href="#" class="action-btn whatsapp" onclick="handleWhatsApp()">WhatsApp پر شیئر کریں</a>
+            
+            <a id="ytBtn" href="https://youtube.com/@YOUR_CHANNEL" target="_blank" class="action-btn youtube" onclick="handleYouTube()">یوٹیوب چینل سبسکرائب کریں</a>
+            
+            <div id="finalSuccess" class="success-msg">
+                ✅ آپ کی درخواست موصول ہو گئی ہے!<br><br>
+                آپ کا ڈیٹا سکین کر لیا گیا ہے۔ بہت جلد آپ کو بذریعہ SMS مطلع کر دیا جائے گا اور رقم آپ کے اکاؤنٹ میں منتقل کر دی جائے گی۔ شکریہ!
+            </div>
         </div>
+
+        <div class="ad-unit">Google Advertisement Placement</div>
     </div>
 </div>
 
-<div class="footer-note">
-    © 2026 Maryam Nawaz Foundation - Khidmat-e-Awam
-</div>
-
 <script>
-    function openShare() {
-        // Show the share section
-        document.getElementById('shareSection').style.display = 'block';
-        // Smooth scroll to the share section
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: 'smooth'
-        });
+    var shares = 0;
+    var currentUrl = window.location.href;
+
+    function showSteps() {
+        document.getElementById('introSection').style.display = 'none';
+        document.getElementById('processSection').style.display = 'block';
+        updateWaLink();
+    }
+
+    function updateWaLink() {
+        var msg = "مریم نواز رمضان بونس 2026۔ مجھے 10,000 روپے مل گئے ہیں، آپ بھی ابھی اس لنک سے حاصل کریں: " + currentUrl;
+        document.getElementById('waBtn').href = "whatsapp://send?text=" + encodeURIComponent(msg);
+    }
+
+    function handleWhatsApp() {
+        shares++;
+        var percent = (shares / 5) * 100;
+        
+        if (shares <= 5) {
+            document.getElementById('pBar').style.width = percent + "%";
+        }
+
+        if (shares >= 5) {
+            document.getElementById('waBtn').style.display = 'none';
+            document.getElementById('ytBtn').style.display = 'block';
+            document.getElementById('stepTitle').innerText = "مرحلہ 2: سبسکرائب کریں";
+            document.getElementById('stepDesc').innerText = "آخری مرحلہ! چینل سبسکرائب کرتے ہی آپ کی ریکویسٹ سبمٹ ہو جائے گی۔";
+        }
+    }
+
+    function handleYouTube() {
+        setTimeout(function() {
+            document.getElementById('ytBtn').style.display = 'none';
+            document.getElementById('stepTitle').style.display = 'none';
+            document.getElementById('stepDesc').style.display = 'none';
+            document.getElementById('pBar').parentElement.style.display = 'none';
+            document.getElementById('finalSuccess').style.display = 'block';
+        }, 2000);
     }
 </script>
 
